@@ -16,6 +16,15 @@ spec:
     - kind: SERVICE
       labels:
         app: productpage
-    - kind: ALL
-      labels:
-        expose: "true"
+    - kind: ALL      
+  options:
+    federation:
+      enabled: true
+      hostSuffix: global
+      serviceSelector:
+      - workspace: details
+        labels:
+          app: details
+      - workspace: reviews
+        labels:
+          app: reviews              
