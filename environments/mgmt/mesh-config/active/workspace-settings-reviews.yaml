@@ -14,3 +14,11 @@ spec:
     - name: productpage
     resources:
     - kind: ALL
+  options:
+    federation:
+      enabled: true
+      hostSuffix: global
+      serviceSelector:
+      - workspace: reviews
+        labels:
+          app: reviews        

@@ -14,3 +14,11 @@ spec:
     - name: details
     resources:
     - kind: ALL
+  options:
+    federation:
+      enabled: true
+      hostSuffix: global
+      serviceSelector:
+      - workspace: details
+        labels:
+          app: details    
