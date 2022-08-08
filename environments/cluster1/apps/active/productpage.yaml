@@ -48,9 +48,9 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: DETAILS_HOSTNAME
-          value: details.default.svc.cluster.local
+          value: details.details.svc.cluster.local
         - name: REVIEWS_HOSTNAME
-          value: reviews.default.svc.cluster.local          
+          value: reviews.reviews.svc.cluster.local          
         ports:
         - containerPort: 9080
         volumeMounts:
