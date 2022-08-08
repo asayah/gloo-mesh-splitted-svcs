@@ -8,3 +8,6 @@ spec:
   - name: cluster2
     namespaces:
     - name: reviews
+  - name: mgmt
+    namespaces:
+    - name: reviews

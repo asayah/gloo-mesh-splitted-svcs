@@ -10,3 +10,6 @@ spec:
   - name: cluster1
     namespaces:
     - name: productpage
+  - name: mgmt
+    namespaces:
+    - name: productpage

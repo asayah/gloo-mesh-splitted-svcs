@@ -16,9 +16,6 @@ spec:
     - kind: SERVICE
       labels:
         app: productpage
-    - kind: SERVICE
-      labels:
-        app: reviews
     - kind: ALL
       labels:
         expose: "true"
