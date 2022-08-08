@@ -1,0 +1,16 @@
+apiVersion: admin.gloo.solo.io/v2
+kind: WorkspaceSettings
+metadata:
+  name: details
+  namespace: details
+spec:
+  importFrom:
+  - workspaces:
+    - name: details
+    resources:
+    - kind: ALL
+  exportTo:
+  - workspaces:
+    - name: details
+    resources:
+    - kind: ALL

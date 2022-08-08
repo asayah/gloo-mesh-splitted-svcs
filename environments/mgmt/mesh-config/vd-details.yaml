@@ -1,0 +1,15 @@
+apiVersion: networking.gloo.solo.io/v2
+kind: VirtualDestination
+metadata:
+  name: details
+  namespace: productpage
+spec:
+  hosts:
+  - details.global
+  services:
+  - namespace: details
+    labels:
+      app: details
+  ports:
+    - number: 9080
+      protocol: HTTP
