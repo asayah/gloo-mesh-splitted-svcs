@@ -5,7 +5,7 @@ metadata:
   namespace: gloo-mesh
 spec:
   workloadClusters:
-  - name: cluster1
+  - name: cluster2
     namespaces:
     - name: details
   - name: mgmt
