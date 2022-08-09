@@ -8,7 +8,7 @@ spec:
   - workspaces:
     - name: gateways
     resources:
-    - kind: SERVICE
+    - kind: ALL
   - workspaces:
     - name: details
     resources:
@@ -21,11 +21,8 @@ spec:
   - workspaces:
     - name: gateways
     resources:
-    - kind: SERVICE
-      labels:
-        app: productpage
     - kind: ALL
-    
+
   options:
     federation:
       enabled: true

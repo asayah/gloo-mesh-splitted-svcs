@@ -6,16 +6,27 @@ metadata:
 spec:
   importFrom:
   - workspaces:
-    - selector:
-        allow_ingress: "true"
+    - name: productpage
     resources:
-    - kind: SERVICE
     - kind: ALL
-      labels:
-        expose: "true"
+  - workspaces:
+    - name: details
+    resources:
+    - kind: ALL
+  - workspaces:
+    - name: reviews
+    resources:
+    - kind: ALL  
   exportTo:
   - workspaces:
-    - selector:
-        allow_ingress: "true"
+    - name: productpage
     resources:
-    - kind: SERVICE
+    - kind: ALL
+  - workspaces:
+    - name: details
+    resources:
+    - kind: ALL
+  - workspaces:
+    - name: reviews
+    resources:
+    - kind: ALL  
