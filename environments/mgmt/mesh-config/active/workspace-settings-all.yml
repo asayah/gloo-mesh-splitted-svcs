@@ -3,4 +3,14 @@ kind: WorkspaceSettings
 metadata:
   name: all
   namespace: default
-spec: {}
+spec:
+  options:
+    federation:
+      enabled: true
+      serviceSelector:
+      - workspace: all
+        labels:
+          app: reviews
+      - workspace: all
+        labels:
+          app: details          
