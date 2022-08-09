@@ -9,6 +9,14 @@ spec:
     - name: gateways
     resources:
     - kind: SERVICE
+  - workspaces:
+    - name: details
+    resources:
+    - kind: ALL
+  - workspaces:
+    - name: reviews
+    resources:
+    - kind: ALL    
   exportTo:
   - workspaces:
     - name: gateways
@@ -16,7 +24,8 @@ spec:
     - kind: SERVICE
       labels:
         app: productpage
-    - kind: ALL      
+    - kind: ALL
+    
   options:
     federation:
       enabled: true
