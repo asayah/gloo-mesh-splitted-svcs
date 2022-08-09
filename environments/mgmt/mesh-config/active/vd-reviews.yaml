@@ -3,6 +3,8 @@ kind: VirtualDestination
 metadata:
   name: reviews
   namespace: productpage
+  labels:
+    failover: "true"  
 spec:
   hosts:
   - reviews.global
