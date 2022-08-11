@@ -10,7 +10,4 @@ spec:
       serviceSelector:
       - workspace: all
         labels:
-          app: reviews
-      - workspace: all
-        labels:
           app: details          
