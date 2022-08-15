@@ -6,10 +6,7 @@ metadata:
 spec:
   hosts:
     - 'reviews.reviews.svc.cluster.local'
-  workloadSelectors:
-  - selector:
-      labels:
-        app: productpage
+  workloadSelectors: []
   http:
     - name: reviews
       matchers:
