@@ -15,6 +15,8 @@ spec:
   workloadSelectors: []
   http:
     - name: productpage
+      labels:
+        oauth: "true"
       matchers:
       - uri:
           prefix: /
