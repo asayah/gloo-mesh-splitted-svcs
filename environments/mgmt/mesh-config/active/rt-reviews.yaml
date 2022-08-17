@@ -16,7 +16,7 @@ spec:
         destinations:
           - ref:
               name: reviews
-              namespace: productpage
+              namespace: reviews
             kind: VIRTUAL_DESTINATION
             port:
               number: 9080

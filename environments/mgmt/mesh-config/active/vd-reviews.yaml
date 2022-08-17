@@ -2,7 +2,7 @@ apiVersion: networking.gloo.solo.io/v2
 kind: VirtualDestination
 metadata:
   name: reviews
-  namespace: productpage
+  namespace: reviews
   labels:
     failover: "true"  
 spec:
