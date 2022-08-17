@@ -1,16 +1,58 @@
 apiVersion: admin.gloo.solo.io/v2
 kind: WorkspaceSettings
 metadata:
-  name: all
-  namespace: default
+  name: gateways
+  namespace: istio-gateways
 spec:
-  options:
-    federation:
-      enabled: true
-      serviceSelector:
-      - workspace: all
-        labels:
-          app: reviews
-      - workspace: all
-        labels:
-          app: details          
+  importFrom:
+  - workspaces:
+    - name: productpage
+    resources:
+    - kind: ALL
+  exportTo:
+  - workspaces:
+    - name: "productpage"
+
+
+---
+apiVersion: admin.gloo.solo.io/v2
+kind: WorkspaceSettings
+metadata:
+  name: productpage
+  namespace: productpage
+spec:
+  importFrom:
+  - workspaces:
+    - name: reviews
+    - name: details
+  exportTo:
+  - workspaces:
+    - name: gateways
+---
+
+apiVersion: admin.gloo.solo.io/v2
+kind: WorkspaceSettings
+metadata:
+  name: details
+  namespace: details
+spec:
+  importFrom:
+  - workspaces:
+    - name: gateways 
+  exportTo:
+  - workspaces:
+    - name: productpage
+---
+
+apiVersion: admin.gloo.solo.io/v2
+kind: WorkspaceSettings
+metadata:
+  name: reviews
+  namespace: reviews
+spec:
+  importFrom:
+  - workspaces:
+    - name: gateways 
+  exportTo:
+  - workspaces:
+    - name: productpage

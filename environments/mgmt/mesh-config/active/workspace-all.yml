@@ -1,10 +1,53 @@
 apiVersion: admin.gloo.solo.io/v2
 kind: Workspace
 metadata:
-  name: all
+  name: gateways
   namespace: gloo-mesh
 spec:
   workloadClusters:
-  - name: '*'
+  - name: *
     namespaces:
-    - name: '*'
+    - name: istio-gateways
+    - name: gloo-mesh-addons
+
+---
+apiVersion: admin.gloo.solo.io/v2
+kind: productpage
+metadata:
+  name: productpage
+  namespace: gloo-mesh
+spec:
+  workloadClusters:
+  - name: *
+    namespaces:
+    - name: productpage
+
+
+---
+apiVersion: admin.gloo.solo.io/v2
+kind: details
+metadata:
+  name: details
+  namespace: gloo-mesh
+spec:
+  workloadClusters:
+  - name: *
+    namespaces:
+    - name: details
+
+
+apiVersion: admin.gloo.solo.io/v2
+kind: reviews
+metadata:
+  name: reviews
+  namespace: gloo-mesh
+spec:
+  workloadClusters:
+  - name: *
+    namespaces:
+    - name: reviews
+
+
+
+
+
