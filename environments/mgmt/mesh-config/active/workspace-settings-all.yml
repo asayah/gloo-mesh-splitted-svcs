@@ -41,6 +41,14 @@ spec:
   exportTo:
   - workspaces:
     - name: productpage
+  options:
+    federation:
+      enabled: true
+      hostSuffix: global
+      serviceSelector:
+      - workspace: details
+        labels:
+          app: details    
 ---
 
 apiVersion: admin.gloo.solo.io/v2
@@ -55,3 +63,11 @@ spec:
   exportTo:
   - workspaces:
     - name: productpage
+  options:
+    federation:
+      enabled: true
+      hostSuffix: global
+      serviceSelector:
+      - workspace: reviews
+        labels:
+          app: reviews
