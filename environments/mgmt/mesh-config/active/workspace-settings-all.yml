@@ -10,6 +10,11 @@ spec:
   exportTo:
   - workspaces:
     - name: "*"
+  options:
+    federation:
+      enabled: true
+      serviceSelector:
+      - namespace: gloo-mesh-addons    
 
 ---
 apiVersion: admin.gloo.solo.io/v2
