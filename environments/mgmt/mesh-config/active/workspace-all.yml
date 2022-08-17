@@ -12,7 +12,7 @@ spec:
 
 ---
 apiVersion: admin.gloo.solo.io/v2
-kind: productpage
+kind: Workspace
 metadata:
   name: productpage
   namespace: gloo-mesh
@@ -25,7 +25,7 @@ spec:
 
 ---
 apiVersion: admin.gloo.solo.io/v2
-kind: details
+kind: Workspace
 metadata:
   name: details
   namespace: gloo-mesh
@@ -37,7 +37,7 @@ spec:
 
 ---
 apiVersion: admin.gloo.solo.io/v2
-kind: reviews
+kind: Workspace
 metadata:
   name: reviews
   namespace: gloo-mesh
