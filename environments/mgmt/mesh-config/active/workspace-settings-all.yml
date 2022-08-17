@@ -11,7 +11,9 @@ spec:
     - kind: ALL
   exportTo:
   - workspaces:
-    - name: "productpage"
+    - name: "*"
+    resources:
+    - kind: ALL    
 
 ---
 apiVersion: admin.gloo.solo.io/v2
