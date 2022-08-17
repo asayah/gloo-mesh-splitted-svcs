@@ -13,7 +13,6 @@ spec:
   - workspaces:
     - name: "productpage"
 
-
 ---
 apiVersion: admin.gloo.solo.io/v2
 kind: WorkspaceSettings
