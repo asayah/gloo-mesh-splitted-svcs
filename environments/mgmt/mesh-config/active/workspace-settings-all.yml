@@ -6,13 +6,10 @@ metadata:
 spec:
   importFrom:
   - workspaces:
-    - name: "*"
+    - name: productpage
   exportTo:
   - workspaces:
     - name: "*"
-  options:
-    federation:
-      enabled: true    
 
 ---
 apiVersion: admin.gloo.solo.io/v2
@@ -23,10 +20,11 @@ metadata:
 spec:
   importFrom:
   - workspaces:
-    - name: "*"
+    - name: reviews
+    - name: details
   exportTo:
   - workspaces:
-    - name: "*"
+    - name: gateways
 ---
 
 apiVersion: admin.gloo.solo.io/v2
@@ -37,10 +35,10 @@ metadata:
 spec:
   importFrom:
   - workspaces:
-    - name: "*"
+    - name: gateways 
   exportTo:
   - workspaces:
-    - name: "*"
+    - name: productpage
   options:
     federation:
       enabled: true
@@ -58,10 +56,10 @@ metadata:
 spec:
   importFrom:
   - workspaces:
-    - name: "*"
+    - name: gateways 
   exportTo:
   - workspaces:
-    - name: "*"
+    - name: productpage
   options:
     federation:
       enabled: true
