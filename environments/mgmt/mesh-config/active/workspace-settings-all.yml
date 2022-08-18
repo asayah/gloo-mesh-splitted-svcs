@@ -27,6 +27,7 @@ spec:
   - workspaces:
     - name: reviews
     - name: details
+    - name: gateways    
   exportTo:
   - workspaces:
     - name: gateways
