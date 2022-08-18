@@ -10,6 +10,9 @@ spec:
   exportTo:
   - workspaces:
     - name: "*"
+  options:
+    federation:
+      enabled: true    
 
 ---
 apiVersion: admin.gloo.solo.io/v2
