@@ -16,7 +16,7 @@ spec:
   http:
     - name: productpage
       labels:
-        oauth: "true"
+        oauth: "azure"
       matchers:
       - uri:
           prefix: /

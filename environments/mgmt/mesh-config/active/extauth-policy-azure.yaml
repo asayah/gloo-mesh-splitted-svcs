@@ -1,0 +1,35 @@
+apiVersion: security.policy.gloo.solo.io/v2
+kind: ExtAuthPolicy
+metadata:
+  name: productpage-azure
+  namespace: productpage
+spec:
+  applyToRoutes:
+  - route:
+      labels:
+        oauth: "azure"
+  config:
+    server:
+      name: ext-auth-server
+      namespace: productpage
+    glooAuth:
+      configs:
+      - oauth2:
+          oidcAuthorizationCode:
+            appUrl: https://bookinfo.asayah.solo.io
+            callbackPath: /callback
+            clientId: c69ec95b-2b8c-45bb-9fa2-6349382ed0e7
+            clientSecretRef:
+              name: oauth-productpage-azure
+              namespace: productpage
+            issuerUrl: "https://login.microsoftonline.com/da21cd1c-6201-4410-ba19-40f843f3e2c4"
+            session:
+              failOnFetchFailure: true
+              redis:
+                cookieName: productpage-azure-session
+                options:
+                  host: redis:6379
+            scopes:
+            - email
+            headers:
+              idTokenHeader: jwt
