@@ -18,7 +18,7 @@ spec:
           oidcAuthorizationCode:
             appUrl: https://bookinfo.asayah.solo.io
             callbackPath: /callback
-            clientId: c69ec95b-2b8c-45bb-9fa2-6349382ed0e7
+            clientId: fb2b1fd0-6ccd-4491-a21e-f618bed0c8c1
             clientSecretRef:
               name: oauth-productpage-azure
               namespace: productpage
