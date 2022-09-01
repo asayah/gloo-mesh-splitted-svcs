@@ -14,7 +14,7 @@ spec:
         priority: 1
     providers:
       oidc:
-        issuer: https://login.microsoftonline.com/da21cd1c-6201-4410-ba19-40f843f3e2c4
+        issuer: https://sts.windows.net/da21cd1c-6201-4410-ba19-40f843f3e2c4/
         tokenSource:
           headers:
           - name: jwt
