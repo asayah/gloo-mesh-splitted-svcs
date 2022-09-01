@@ -1,0 +1,12 @@
+apiVersion: networking.gloo.solo.io/v2
+kind: ExternalEndpoint
+metadata:
+  name: azure-jwks
+  namespace: productpage
+  labels:
+    host: azure-jwks
+spec:
+  address: login.microsoftonline.com
+  ports:
+  - name: https
+    number: 443

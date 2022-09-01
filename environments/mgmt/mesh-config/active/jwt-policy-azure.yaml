@@ -1,0 +1,35 @@
+apiVersion: security.policy.gloo.solo.io/v2
+kind: JWTPolicy
+metadata:
+  name: jwt-policy-jwks
+  namespace: productpage
+spec:
+  applyToRoutes:
+  - route:
+      labels:
+        oauth: "azure"
+  config:
+    phase:
+      postAuthz:
+        priority: 1
+    providers:
+      oidc:
+        issuer: https://login.microsoftonline.com/da21cd1c-6201-4410-ba19-40f843f3e2c4
+        tokenSource:
+          headers:
+          - name: jwt
+        remote:
+          url: "https://login.microsoftonline.com/da21cd1c-6201-4410-ba19-40f843f3e2c4/discovery/v2.0/keys/"
+          destinationRef:
+            ref:
+              name: azure-jwks
+              namespace: productpage
+            kind: EXTERNAL_SERVICE
+            port: 
+              number: 443
+          enableAsyncFetch: true
+        claimsToHeaders:
+        - claim: email
+          header: X-Email
+        - claim: sub
+          header: X-Sub

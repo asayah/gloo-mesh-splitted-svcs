@@ -1,0 +1,17 @@
+apiVersion: networking.gloo.solo.io/v2
+kind: ExternalService
+metadata:
+  name: azure-jwks
+  namespace: productpage
+  labels:
+    expose: "true"
+spec:
+  hosts:
+  - oidc-jwks.external
+  ports:
+  - name: https
+    number: 443
+    protocol: HTTPS
+    clientsideTls: {}
+  selector:
+    host: azure-jwks
