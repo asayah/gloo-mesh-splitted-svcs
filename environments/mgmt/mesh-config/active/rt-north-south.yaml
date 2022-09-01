@@ -14,6 +14,19 @@ spec:
       cluster: cluster1
   workloadSelectors: []
   http:
+    - name: httpbin
+      labels:
+        oauth: "azure"
+      matchers:
+      - uri:
+          prefix: /get
+      forwardTo:
+        destinations:
+          - ref:
+              name: httpbin
+              namespace: productpage
+            port:
+              number: 8000
     - name: productpage
       labels:
         oauth: "azure"
@@ -27,3 +40,5 @@ spec:
               namespace: productpage
             port:
               number: 9080
+
+
