@@ -16,7 +16,7 @@ spec:
   http:
     - name: httpbin
       labels:
-        oauth: "azure"
+         api-key-enforced: "true"
       matchers:
       - uri:
           prefix: /get
