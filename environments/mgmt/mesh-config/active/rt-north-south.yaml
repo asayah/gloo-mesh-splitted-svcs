@@ -18,7 +18,7 @@ spec:
       labels:
          api-key-enforced: "true"
          ratelimited: "true"
-         transform: "false"
+         transform: "true"
       matchers:
       - uri:
           prefix: /get
