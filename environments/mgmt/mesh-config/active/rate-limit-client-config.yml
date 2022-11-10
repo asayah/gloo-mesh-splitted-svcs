@@ -1,0 +1,12 @@
+apiVersion: trafficcontrol.policy.gloo.solo.io/v2
+kind: RateLimitClientConfig
+metadata:
+  name: rl
+  namespace: productpage
+spec:
+  raw:
+    rateLimits:
+    - actions:
+      - genericKey:
+          descriptorValue: "per-minute"
+      - remoteAddress: {}
