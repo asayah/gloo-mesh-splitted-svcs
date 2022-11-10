@@ -7,7 +7,7 @@ spec:
   applyToRoutes:
   - route:
       labels:
-        ratelimited: "true"
+        transform: "true"
   config:
     phase:
       preAuthz:
