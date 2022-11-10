@@ -16,7 +16,7 @@ spec:
   http:
     - name: httpbin
       labels:
-         api-key-enforced: "false"
+         api-key-enforced: "true"
          ratelimited: "false"
          transform: "false"
       matchers:
