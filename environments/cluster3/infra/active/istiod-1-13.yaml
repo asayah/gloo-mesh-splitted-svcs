@@ -24,7 +24,7 @@ spec:
           multiCluster:
             clusterName: cluster3
           network: network1
-          hub: us-docker.pkg.dev/gloo-mesh/istio-7a97385594af
+          hub: us-docker.pkg.dev/gloo-mesh/istio-workshops
           tag: 1.16.1-solo
         meshConfig:
           trustDomain: cluster3
